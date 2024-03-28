@@ -50,7 +50,7 @@ int main()
 	float TotalAngle = 2 * 2 * acos(0.0f);//3.141518......
 	float vertices[divisions * 6];
 	int i = 0;
-
+	float col = 0.0f;
 	while (i < divisions)
 	{
 		angle = (TotalAngle * float(i)) / (float)divisions;
@@ -63,11 +63,12 @@ int main()
 		vertices[(i * 6) + 1] = yValue;
 		vertices[(i * 6) + 2] = 0.0f;
 		//RGB Color values
-		vertices[(i * 6) + 3] = sinf(xValue);
-		vertices[(i * 6) + 4] = cosf(yValue);
-		vertices[(i * 6) + 5] = cosf(yValue);
+		vertices[(i * 6) + 3] = sinf(col * xValue);
+		vertices[(i * 6) + 4] = cosf(col * yValue * 2);
+		vertices[(i * 6) + 5] = cosf(col * yValue * yValue * 2);
 		std::cout << "Coord: X,Y" << xValue << "," << yValue << std::endl;
 		i++;
+		col += 0.1f;
 	}
 
 	//----------------------------

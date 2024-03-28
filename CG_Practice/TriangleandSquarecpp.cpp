@@ -20,7 +20,7 @@ int main()
 	//----------------------------------------
 
 	//Window Creation------------------
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Square Render", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Practice Render", NULL, NULL); // NULL ,NULL are the parameters are used when using multiple screens
 	if (window == NULL)
 	{
 		std::cout << "FAILED TO CREATE THE WINDOW!!" << std::endl;
@@ -40,41 +40,51 @@ int main()
 	Shader TriShader = Shader("Vertex.shader", "fragment.shader");
 
 	float vertices[] = {
-		0.5f,0.5f,0.0f,       // Top right Index 0
-		0.5f,-0.5f,0.0f,	// Bottom Right Index 1
-	   -0.5f,-0.5f,0.0f,	// Bottom Left Index 2
-	   -0.5f,0.5f,0.0f,		// Top Right Index 3
+		-0.3,0.2f,0.0f, // left vertex -0th STRIDE
+		-0.5f,-0.1f,0.0f, // right vertex - 1st STRIDE
+		-0.1f,-0.1f,0.0f	//Top Vertex - 2nd STRIDE
+	};
+	float vertices2[] = {
+		0.5f,0.2f,0.0f,
+		0.5f,-0.1f,0.0f,
+		0.1f,-0.1f,0.0f,
+		0.1f,0.2f,0.0f,	
 	};
 	unsigned int indices[] = {
-		0 , 1 , 3,		//First triangle
-		1 , 2 , 3,		//Second Triangle
+		0, 1 , 3 ,
+		1 , 2 , 3
 	};
 
-	//VBO - Vertex Buffer Object , VAO - Vertex Array Object //EBO - Element Buffer Object
-	unsigned int VBO, VAO, EBO;
+	//VBO - Vertex Buffer Object - Creating empty buffer (space)in the GPU to store values
+	// VAO - Vertex Array Object - 
+	unsigned int VBO[2], VAO[2],EBO;
 
-	//VBO Declaration
-	glGenBuffers(1, &VBO);
-	//EBO Declaration
+	//VBO Declaration 
+	glGenBuffers(2, VBO);
+	glGenVertexArrays(2, VAO); // Generating two VAOs
 	glGenBuffers(1, &EBO);
 
-	//Binding Buffers
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
+	//Binding Buffers for first triangle
+	glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-	//VAO Generation
-	glGenVertexArrays(1, &VAO);
-	glBindVertexArray(VAO);
+	//VAO Generation for first triangle
+	glBindVertexArray(VAO[0]);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
-	glBindBuffer(GL_ARRAY_BUFFER, 0); //unbinding the current allocated VBO
+	glBindBuffer(GL_ARRAY_BUFFER, 0); //unbindin the current allocated VBO
 	glBindVertexArray(0); // unbinding the correct allocated VAO
+
+	//VBO for second triangle
+	glBindVertexArray(VAO[1]);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), vertices2, GL_STATIC_DRAW);
+	
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	//EBO
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 
 
@@ -91,28 +101,33 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		TriShader.use();
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLE_FAN, 0, 10);
+		glBindVertexArray(VAO[0]);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
+		glBindVertexArray(VAO[1]);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		
+
+
 
 		//Buffer Swapping And Event Tracking
-		glfwSwapBuffers(window);
-		glfwPollEvents();
+		glfwSwapBuffers(window); // Constantly refresh screen and refresh buffers
+		glfwPollEvents();		//Tracking events from keyboard
 
 	}
 
-	glfwTerminate();
+	glfwTerminate();  //Close the window
 	return 0;
 }
 
 void frameBufferSizeCallBack(GLFWwindow* window, int width, int height)
 {
-	glViewport(0, 0, width, height);
+	glViewport(0, 0, width, height); //Width and height will be given when re-sizing window
 }
 void ProcessInput(GLFWwindow* window)
 {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) //When we press Escape then window should close
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
