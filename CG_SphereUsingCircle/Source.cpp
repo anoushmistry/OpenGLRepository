@@ -57,7 +57,7 @@ int main()
 
 		float xValue = cos(angle) * radius;
 		float yValue = sin(angle) * radius;
-
+		
 		//XYZ Coord values
 		vertices[(i * 6)] = xValue;
 		vertices[(i * 6) + 1] = yValue;
