@@ -31,4 +31,15 @@
     <None Include="fragment.shader" />
     <None Include="Vertex.shader" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="TextureTest.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Football.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TextureTest2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
