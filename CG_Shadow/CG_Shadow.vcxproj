@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{F6B425B5-38CE-4420-95BB-9CB0184B4226}</ProjectGuid>
+    <ProjectGuid>{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}</ProjectGuid>
     <RootNamespace>OpenGLProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

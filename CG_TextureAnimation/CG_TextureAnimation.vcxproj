@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CubeRender.h" />
+    <ClInclude Include="FileName.h" />
     <ClInclude Include="ShaderH.h" />
   </ItemGroup>
   <ItemGroup>

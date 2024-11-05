@@ -32,45 +32,17 @@
     <ClInclude Include="CubeRender.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FileName.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="TextureTest.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Football.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="TextureTest2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="GameImage1.PNG">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="GameImage2.PNG">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="LeonSKeneddy.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Stripres.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Stripes.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="AdaWong.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="fragment.shader">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="vertex.shader">
-      <Filter>Resource Files</Filter>
-    </None>
+    <None Include="fragment.shader" />
+    <None Include="vertex.shader" />
   </ItemGroup>
 </Project>

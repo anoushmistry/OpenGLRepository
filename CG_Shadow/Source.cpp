@@ -5,12 +5,11 @@
 #include<iostream>
 #include<cmath>
 #include<CubeRender.h>
-#include<FileName.h>
 
 
 
-const unsigned int SCR_WIDTH = 640;
-const unsigned int SCR_HEIGHT = 480;
+const unsigned int SCR_WIDTH = 640*2;
+const unsigned int SCR_HEIGHT = 480*2;
 
 void ProcessInputs(GLFWwindow* window);
 float ConvertToRGB(float val);
@@ -53,7 +52,7 @@ int main()
 		ProcessInputs(window);
 
 	
-		glClearColor(0.2f,0.2f,0.2f,1.0f);
+		glClearColor(0.3f,0.2f,0.4f,1.0f);
 		glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
 		RenderCube("vertex.shader","fragment.shader");
