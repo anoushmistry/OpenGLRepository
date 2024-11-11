@@ -26,7 +26,7 @@
 
 
 //------ Strips Pattern --------
-/*
+
 #version 330 core
 out vec4 FragColor;
 
@@ -46,9 +46,6 @@ void main()
     vec3 finalColor = mix(color1, color2, stripes);
     FragColor = vec4(finalColor, 1.0);
 }
-*/
-
-
 
 //-------- Radial Gradient Pattern -------
 /*
@@ -186,7 +183,7 @@ void main()
 
 //------- Wood Grain Pattern -------
 
-#version 330 core
+/*#version 330 core
 out vec4 FragColor;
 
 in vec2 TexCoord;
@@ -211,4 +208,4 @@ void main()
 
     vec3 finalColor = mix(color1, color2, grain);
     FragColor = vec4(finalColor, 1.0);
-}
+}*/

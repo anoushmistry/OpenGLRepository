@@ -5,11 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A83D435D-BFEC-4C8C-8AA9-B61E40961B60}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG_CubeRender", "CG_CubeRender\CG_CubeRender.vcxproj", "{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG2_Internal1Actual", "CG2_Internal1Actual\CG2_Internal1Actual.vcxproj", "{BC0B698A-B933-48D3-8EAB-42AADD657256}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG_ProceduralTexturing", "CG_ProceduralTexturing\CG_ProceduralTexturing.vcxproj", "{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG_TextureAnimation", "CG_TextureAnimation\CG_TextureAnimation.vcxproj", "{BB0EC927-EBB1-4089-99D0-E3C84AACCEA5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG2_Internal1TextureOnSquare", "CG2_Internal1TextureOnSquare\CG2_Internal1TextureOnSquare.vcxproj", "{BB0EC927-EBB1-4089-99D0-E3C84AACCEA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,22 +17,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Debug|x64.ActiveCfg = Debug|x64
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Debug|x64.Build.0 = Debug|x64
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Debug|x86.ActiveCfg = Debug|Win32
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Debug|x86.Build.0 = Debug|Win32
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Release|x64.ActiveCfg = Release|x64
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Release|x64.Build.0 = Release|x64
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Release|x86.ActiveCfg = Release|Win32
-		{D5DD29DD-99F6-4EA7-8C82-2E197E7EB053}.Release|x86.Build.0 = Release|Win32
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Debug|x64.ActiveCfg = Debug|x64
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Debug|x64.Build.0 = Debug|x64
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Debug|x86.ActiveCfg = Debug|Win32
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Debug|x86.Build.0 = Debug|Win32
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Release|x64.ActiveCfg = Release|x64
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Release|x64.Build.0 = Release|x64
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Release|x86.ActiveCfg = Release|Win32
-		{37BF324B-3A1E-48A4-ACA7-56E9C962D6C7}.Release|x86.Build.0 = Release|Win32
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Debug|x64.ActiveCfg = Debug|x64
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Debug|x64.Build.0 = Debug|x64
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Debug|x86.Build.0 = Debug|Win32
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Release|x64.ActiveCfg = Release|x64
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Release|x64.Build.0 = Release|x64
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Release|x86.ActiveCfg = Release|Win32
+		{BC0B698A-B933-48D3-8EAB-42AADD657256}.Release|x86.Build.0 = Release|Win32
 		{BB0EC927-EBB1-4089-99D0-E3C84AACCEA5}.Debug|x64.ActiveCfg = Debug|x64
 		{BB0EC927-EBB1-4089-99D0-E3C84AACCEA5}.Debug|x64.Build.0 = Debug|x64
 		{BB0EC927-EBB1-4089-99D0-E3C84AACCEA5}.Debug|x86.ActiveCfg = Debug|Win32

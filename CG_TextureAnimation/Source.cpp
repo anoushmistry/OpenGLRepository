@@ -8,8 +8,8 @@
 
 
 
-const unsigned int SCR_WIDTH = 640;
-const unsigned int SCR_HEIGHT = 480;
+const unsigned int SCR_WIDTH = 1000;
+const unsigned int SCR_HEIGHT = 800;
 
 void ProcessInputs(GLFWwindow* window);
 float ConvertToRGB(float val);
@@ -45,7 +45,7 @@ int main()
 	// -----------------------------
 	glEnable(GL_DEPTH_TEST);
 
-	InitCubeVerts(0.0,0.0f,0.7f);
+	InitCubeVerts(0.0f,0.0f,0.7f);
 	//RENDER LOOP
 	while (!glfwWindowShouldClose(window))
 	{
