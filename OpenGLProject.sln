@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A83D435D-BFEC-4C8C-8AA9-B61E40961B60}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG2_Internal2", "CG2_Internal2\CG2_Internal2.vcxproj", "{32FAC199-4C7E-4181-8F09-61A3EE21351C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CG2_External Practice", "CG2_External Practice\CG2_External Practice.vcxproj", "{32FAC199-4C7E-4181-8F09-61A3EE21351C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

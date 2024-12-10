@@ -85,7 +85,7 @@ int main()
 	// load and create a texture 
 	// -------------------------
 	unsigned int texture[2];
-	glGenTextures(1, texture);
+	glGenTextures(2, texture);
 	
 	//*******************************************************************
 	//Tex 1 loading--------------------										  
