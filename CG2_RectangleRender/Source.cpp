@@ -40,10 +40,10 @@ int main()
 	Shader TriShader = Shader("Vertex.shader", "fragment.shader");
 
 	float vertices[] = {
-		0.5f,0.3f,0.0f,       // Top right Index 0
-		0.5f,-0.3f,0.0f,	// Bottom Right Index 1
-	   -0.5f,-0.3f,0.0f,	// Bottom Left Index 2
-	   -0.5f,0.3f,0.0f,		// Top Right Index 3
+		0.5f,0.5f,0.0f,       // Top right Index 0
+		0.5f,-0.5f,0.0f,	// Bottom Right Index 1
+	   -0.5f,-0.5f,0.0f,	// Bottom Left Index 2
+	   -0.5f,0.5f,0.0f,		// Top Right Index 3
 	};
 	unsigned int indices[] = {
 		0 , 1 , 3,		//First triangle
@@ -94,7 +94,7 @@ int main()
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 10);
 
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, indices);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		//Buffer Swapping And Event Tracking
 		glfwSwapBuffers(window);

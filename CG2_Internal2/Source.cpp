@@ -3,6 +3,7 @@
 #include<ShaderH.h>
 #include <iostream>
 
+#include<Camera.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -78,7 +79,6 @@ int main()
     {
         processInput(window);
 
-       
         glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 

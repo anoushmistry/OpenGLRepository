@@ -102,62 +102,62 @@ void InitCubeVerts(float x, float y, float length)
 	//glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 	//glEnableVertexAttribArray(2);
 
-	int width, height, clrChannels;
-	unsigned char* data;
-	//Loading and creating the Texture1
-	{
-		glGenTextures(1, &texture1);
-		glBindTexture(GL_TEXTURE_2D, texture1);
-		//Settting of Texture wrapping parameters.
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		//Settting of Texture filtering parameters.
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	//int width, height, clrChannels;
+	//unsigned char* data;
+	////Loading and creating the Texture1
+	//{
+	//	glGenTextures(1, &texture1);
+	//	glBindTexture(GL_TEXTURE_2D, texture1);
+	//	//Settting of Texture wrapping parameters.
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	//	//Settting of Texture filtering parameters.
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-		//Loading the image file
-		
+	//	//Loading the image file
+	//	
 
-		stbi_set_flip_vertically_on_load(true);
+	//	stbi_set_flip_vertically_on_load(true);
 
-		data = stbi_load("GameImage1.png", &width, &height, &clrChannels, STBI_rgb_alpha);
-		if (data)
-		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-			glGenerateMipmap(GL_TEXTURE_2D);
-		}
-		else
-		{
-			std::cout << "FAILED TO LOAD THE IMAGE!" << std::endl;
-		}
-		stbi_image_free(data);
-	}
+	//	data = stbi_load("Demon.jpg", &width, &height, &clrChannels, STBI_rgb_alpha);
+	//	if (data)
+	//	{
+	//		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	//		glGenerateMipmap(GL_TEXTURE_2D);
+	//	}
+	//	else
+	//	{
+	//		std::cout << "FAILED TO LOAD THE IMAGE!" << std::endl;
+	//	}
+	//	stbi_image_free(data);
+	//}
 
-	//Loading and creating the Texture2
-	{
-		glGenTextures(1, &texture2);
-		glBindTexture(GL_TEXTURE_2D, texture2);
-		//Settting of Texture wrapping parameters.
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		//Settting of Texture filtering parameters.
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-		
-		stbi_set_flip_vertically_on_load(true);
+	////Loading and creating the Texture2
+	//{
+	//	glGenTextures(1, &texture2);
+	//	glBindTexture(GL_TEXTURE_2D, texture2);
+	//	//Settting of Texture wrapping parameters.
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	//	//Settting of Texture filtering parameters.
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	//	
+	//	stbi_set_flip_vertically_on_load(true);
 
-		data = stbi_load("GameImage2.png", &width, &height, &clrChannels, STBI_rgb_alpha);
-		if (data)
-		{
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-			glGenerateMipmap(GL_TEXTURE_2D);
-		}
-		else
-		{
-			std::cout << "FAILED TO LOAD THE IMAGE!" << std::endl;
-		}
-		stbi_image_free(data);
-	}
+	//	data = stbi_load("Nezuko.png", &width, &height, &clrChannels, STBI_rgb_alpha);
+	//	if (data)
+	//	{
+	//		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	//		glGenerateMipmap(GL_TEXTURE_2D);
+	//	}
+	//	else
+	//	{
+	//		std::cout << "FAILED TO LOAD THE IMAGE!" << std::endl;
+	//	}
+	//	stbi_image_free(data);
+	//}
 
 
 
@@ -173,9 +173,28 @@ void RenderCube(const char* vertex, const char* fragment)
 {
 	Shader myShader(vertex, fragment);
 	shaderID = myShader.ID;
+	myShader.use();
+
+	
+	myShader.use();
+	myShader.setVec3("color1", glm::vec3(0.9f, 0.9f, 0.9f));     // Light checker color
+	myShader.setVec3("color2", glm::vec3(0.3f, 0.3f, 0.3f));     // Dark checker color
+	myShader.setVec3("shadowColor", glm::vec3(0.3f, 0.3f, 0.3f)); // Darker overlay color for shadows
+	myShader.setVec2("checkerSize", glm::vec2(1.0f, 1.0f));      // Checker square size
+
+	// Set light position above ground and a bit to the side for shadow effect
+	glm::vec3 lightPosition(5.0f, 10.0f, 5.0f); // Example light position
+	glm::mat4 shadowProj = glm::mat4(1.0f);
+
+	// Configure shadow projection matrix to project onto ground (XZ plane)
+	shadowProj[1][1] = 0.0f;                     // Flatten shadow on Y-axis (ground plane)
+	shadowProj[3][1] = -1.0f / lightPosition.y;  // Adjust based on light position height
+
+	myShader.setMat4("shadowProj", shadowProj);
+
 
 	for (unsigned int i = 0; i < 10; i++) {
-		myShader.use();
+		
 
 		// Pass the time to the shader for potential animated effects
 		float timeValue = glfwGetTime();

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{E8990FD5-9AAB-4FE5-855B-37BF774E8FAE}</ProjectGuid>
+    <ProjectGuid>{413A7FAA-3290-4231-BE57-7CD0A654F0E2}</ProjectGuid>
     <RootNamespace>OpenGLProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -145,15 +145,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="glad.c" />
-    <ClCompile Include="Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="ShaderH.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fragment.shader" />
+    <None Include="Fragment.shader" />
     <None Include="Vertex.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glad.c" />
+    <ClCompile Include="Internal3 Input Question.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
